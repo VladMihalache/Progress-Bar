@@ -1,15 +1,25 @@
 .mainContainer{
-    width:500px;
-    height:500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:100vh;
     background-color: black;
+}
+
+.barContainer{
+    width: 80%;
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-color: rgb(54, 6, 46);
+}
+
+.bar{
+    margin: 0 auto;
 }
 
 .buttonContainer{
     margin: 0 auto;
-}
-
-.bar{
-    background-color: black;
 }
 
 .left{

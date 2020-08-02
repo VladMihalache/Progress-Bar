@@ -10,11 +10,29 @@ export default function Bar() {
     <div>
       <main>
           <div className={styles.mainContainer}>
-            <h1>eaas</h1>
-            <Progress className={styles.bar} color="pink" height="32px" value={progressValue} hasStripe isAnimated/>
+            <div className={styles.barContainer}>
+              <Progress 
+                className={styles.bar}
+                color="pink" 
+                height="32px" 
+                value={progressValue} 
+                hasStripe 
+                isAnimated/>
+            </div>
             <div className={styles.buttonContainer}>
-                <IconButton className={styles.left} onClick={() => setProgress(progressValue - 10)} variantColor="pink" aria-label="Decrease Progress" size="lg" icon="arrow-back"/>
-                <IconButton className={styles.right} onClick={() => setProgress(progressValue + 10)} variantColor="pink" aria-label="Increase Progress" size="lg" icon="arrow-forward"/>
+              <IconButton 
+                className={styles.left} 
+                onClick={() => {if(progressValue>0)setProgress(progressValue - 10)}} 
+                variantColor="pink" 
+                aria-label="Decrease Progress" 
+                size="lg" 
+                icon="arrow-back"/>
+              <IconButton 
+                className={styles.right}
+                onClick={() => {if(progressValue<100)setProgress(progressValue + 10)}} 
+                variantColor="pink" 
+                aria-label="Increase Progress"
+                size="lg" icon="arrow-forward"/>
             </div>
           </div>
       </main>
