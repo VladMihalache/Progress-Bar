@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Progress } from "@chakra-ui/core";
-import { IconButton } from "@chakra-ui/core";
+import { Button } from "@chakra-ui/core";
 import styles from "./progressBar.module.css"
 
 export default function Bar() {
@@ -20,19 +20,24 @@ export default function Bar() {
                 isAnimated/>
             </div>
             <div className={styles.buttonContainer}>
-              <IconButton 
+              <Button 
                 className={styles.left} 
                 onClick={() => {if(progressValue>0)setProgress(progressValue - 10)}} 
                 variantColor="pink" 
                 aria-label="Decrease Progress" 
                 size="lg" 
-                icon="arrow-back"/>
-              <IconButton 
+                >
+                - 10
+                </Button>
+              <Button 
                 className={styles.right}
                 onClick={() => {if(progressValue<100)setProgress(progressValue + 10)}} 
                 variantColor="pink" 
                 aria-label="Increase Progress"
-                size="lg" icon="arrow-forward"/>
+                size="lg"
+              >
+                + 10
+              </Button>
             </div>
           </div>
       </main>
