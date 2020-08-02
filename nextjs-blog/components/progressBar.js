@@ -4,22 +4,17 @@ import { IconButton } from "@chakra-ui/core";
 import styles from "./progressBar.module.css"
 
 export default function Bar() {
-    function decrease(){
-        console.log('hello')
-    }
-    function increase(){
-        console.log('hello')
-    }
+    const [progressValue, setProgress] = useState(30);
 
   return (
     <div>
       <main>
           <div className={styles.mainContainer}>
             <h1>eaas</h1>
-            <Progress color="pink" height="32px" value={50} hasStripe isAnimated/>
+            <Progress className={styles.bar} color="pink" height="32px" value={progressValue} hasStripe isAnimated/>
             <div className={styles.buttonContainer}>
-                <IconButton onClick={decrease()} variantColor="teal" aria-label="Decrease Progress" size="lg" icon="arrow-back"/>
-                <IconButton onClick={increase()} variantColor="teal" aria-label="Increase Progress" size="lg" icon="arrow-forward"/>
+                <IconButton className={styles.left} onClick={() => setProgress(progressValue - 10)} variantColor="pink" aria-label="Decrease Progress" size="lg" icon="arrow-back"/>
+                <IconButton className={styles.right} onClick={() => setProgress(progressValue + 10)} variantColor="pink" aria-label="Increase Progress" size="lg" icon="arrow-forward"/>
             </div>
           </div>
       </main>
